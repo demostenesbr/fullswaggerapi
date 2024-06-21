@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 
 import { router } from "./routes";
@@ -9,6 +10,17 @@ const app = express();
 
 app.use(express.json());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+})
+
+app.use(cors());
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.get("/terms", (request, response) => {
@@ -18,4 +30,6 @@ app.get("/terms", (request, response) => {
 });
 
 app.use("/v1", router);
-app.listen(3000, () => console.log("Server is running in port 3000"));
+app.listen(9000, function () {
+  console.log("Server is running in port 9000");
+});
