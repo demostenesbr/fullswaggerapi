@@ -1,0 +1,14 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de manipulação de produtos",
+        "description": "Essa API tem o objetivo a manipulação de produtos",
+        "termsOfService": "https://localhost:3000/terms",
+        "contact": {
+            "name": "API Support",
+            "url": "https://localhost:3000/support",
+            "email": "support@localhost"
+        },
+        "version": "1.0.0"
+    }
+}
