@@ -30,6 +30,6 @@ app.get("/terms", (request, response) => {
 });
 
 app.use("/v1", router);
-app.listen(9000, function () {
-  console.log("Server is running in port 9000");
+app.listen(7777, function () {
+  console.log("Server is running in port 7777");
 });
